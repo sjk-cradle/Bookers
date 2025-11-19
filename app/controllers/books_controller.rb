@@ -14,6 +14,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book.id)
     else
+      flash.now[:alert] = "#{@book.errors.count}errors prohibited this book from being saved:"
       @books = Book.all
       render :index
     end
@@ -25,7 +26,6 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    
   end
 
   def update

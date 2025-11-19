@@ -39,6 +39,7 @@
  .flash-message.notice {
   color: green;
   font-size: 13px;
+  margin: 33px;
  }
 
   .flash-message.alert {
